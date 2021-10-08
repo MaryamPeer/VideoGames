@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+}
+
+.col-sm{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+    /* background-color: red; */
+}
+
+#mapChartSection{
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+    /* background-color: blue; */
+}
+
+#top5Charts{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+#selectionCharts{
+    height: 80vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+}
+
+#container{
+    background-color: #916BBF;
+}
+
+/* #parent{
+    position: relative;
+}
+
+#form{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+}
+
+#selection{
+    height: 20%;
+    background-color: blue;
+}
+
+#charts{
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+}
+
+#radialChart{
+    height: 100%;
+    width: 50%;
+    float: left;
+    background-color: firebrick;
+}
+
+#donutChart{
+    height: 100%;
+    width: 50%;
+    float: right;
+}
+ */
