@@ -1,4 +1,4 @@
-Country ,latitude,longitude,Region,Population,Internet Population,Revenues
+Country,latitude,longitude,Region,Population,Internet Population,Revenues
 China,35.86166,104.195397,Asia-Pacific,1439300000,946400000,44263000000
 United States of America,37.09024,-95.712891,North America,331000000,283900000,42107000000
 Japan,36.204824,138.252924,Asia-Pacific,126500000,114900000,20615000000
