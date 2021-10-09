@@ -11,7 +11,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">  -->
         
         <!-- D3.js -->
         <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -22,6 +22,7 @@
         
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/bubblePlotStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/mapChartStyle.css">
     </head>
 
     <body>
@@ -36,7 +37,13 @@
             </div>
 
             <div id="mapChartSection" class="row">
-                <div id="choropleth_symbol_map" class="col-sm">
+                <div id="mapChartTitle">
+                    <h4>10 Top Countries By Game Revenues</h4>
+                </div>
+
+                <div id="choropleth_symbol" class="col-sm">
+                    <div id="choropleth_symbol_map"></div>
+                    
                 </div>
             </div>
             
@@ -166,8 +173,6 @@
         </div>
     
         <script src="js/bubblePlot.js"></script>
-        <script src="js/vegaPlot.js"></script>
-
-        
+        <script src="js/vegaPlot.js"></script>        
     </body>
 </html>

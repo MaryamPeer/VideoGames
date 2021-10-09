@@ -15,15 +15,15 @@
 }
 
 #title{
-    height: 10vh;
+    height: 20vh;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    border-left: 3px solid white;
+    /* border-left: 3px solid white;
     border-right: 3px solid white;
-    border-top: 3px solid white;
+    border-top: 3px solid white; */
     /* background-color: red; */
 }
 
@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid white;
+    /* border: 3px solid white; */
     /* background-color: blue; */
 }
 
