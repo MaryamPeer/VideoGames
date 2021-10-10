@@ -27,16 +27,6 @@
     /* background-color: red; */
 }
 
-#mapChartSection{
-    height: 80vh;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 3px solid white; */
-    /* background-color: blue; */
-}
-
 #top5Charts{
     text-align: center;
     align-items: center;
@@ -54,6 +44,29 @@
 
 #container{
     background-color: #916BBF;
+}
+
+#genreTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#genreList{
+    height: 10vh;
+}
+
+#genreCharts{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: aqua;
+}
+
+
+.btn{
+    width: 75%;
 }
 
 /* #parent{

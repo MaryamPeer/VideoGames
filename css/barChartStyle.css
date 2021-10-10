@@ -1,0 +1,41 @@
+#barChartSection{
+    position: relative;
+    /* text-align: center; */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    /* border: 3px solid white; */
+}
+#barChartForm{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* display: block; */
+}
+
+#barChartTitle{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+#bar{
+    position: relative;
+    height: 90%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine; */
+}
+
+#bar_chart{
+    width: 80%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

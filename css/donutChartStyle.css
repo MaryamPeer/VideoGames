@@ -1,0 +1,43 @@
+#donutChartSection{
+    position: relative;
+}
+
+#donutChartForm{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: beige; */
+    /* display: block; */
+}
+
+#donutChartTitle{
+    /* text-align: center; */
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+
+#donutChartDiv{
+    position: relative;
+    height: 80%;
+    background-color: black;
+}
+
+#donut_chart{
+    width: 100%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#selectedGenreDiv{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}

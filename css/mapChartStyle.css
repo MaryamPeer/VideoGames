@@ -1,3 +1,14 @@
+#mapChartSection{
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    /* border: 3px solid white; */
+    /* background-color: blue; */
+}
+
 #mapChartTitle{
     height: 10%;
     display: flex;
@@ -9,10 +20,11 @@
 #choropleth_symbol{
     position: relative;
     height: 90%;
-    /* display: flex;
+    /* background-color: aqua; */
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine; */
+    background-color: aquamarine;
 }
 
 #choropleth_symbol_map{

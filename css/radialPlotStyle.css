@@ -1,0 +1,35 @@
+#radialPlotSection{
+    position: relative;
+}
+
+#radialPlotForm{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: beige; */
+    /* display: block; */
+}
+
+#radialPlotTitle{
+    /* text-align: center; */
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+
+#radialPlotDiv{
+    position: relative;
+    height: 80%;
+    background-color: black;
+}
+
+#radial_plot{
+    width: 100%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

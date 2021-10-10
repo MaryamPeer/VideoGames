@@ -23,6 +23,9 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/bubblePlotStyle.css">
         <link rel="stylesheet" type="text/css" href="css/mapChartStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/barChartStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/donutChartStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/radialPlotStyle.css">
     </head>
 
     <body>
@@ -64,10 +67,77 @@
                     </div>                        
                 </div>
 
-                <div style="background-color: transparent; border-bottom: 3px solid white; border-top: 3px solid white;" class="col-sm">
+                <div id="barChartSection" class="col-sm">
 
-                </div>
+                    <div id="barChartForm" class="form-group">
+                        <div id="barChartTitle">
+                            <h4>5 Top Games on Twitch in 2020</h4>
+                        </div>
+        
+                        <div id="bar" class="col-sm">
+                            <div id="bar_chart"></div>                        
+                        </div>
+                    </div>
+                   
+
+                </div>            
+            </div>
             
+            <div  style="height: 10vh; background-color: azure;" class="row">
+                <h4 id="genreTitle">Game Genre</h4>
+
+            </div>
+
+            <div id="genreList"class="row">
+                
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" onclick="displayDonutChart('action')"> ACTION</button>
+                </div>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" onclick="displayDonutChart('adventure')"> ADVENTURE</button>
+                </div>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" onclick="displayDonutChart('racing')"> RACING</button>
+                </div>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" onclick="displayDonutChart('shooter')"> SHOOTER</button>
+                </div>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" onclick="displayDonutChart('sports')"> SPORTS</button>
+                </div>
+
+            </div>
+
+            <div id="genreCharts" class="row">
+
+                <div id="radialPlotSection" class="col-sm">                    
+                    <div id="radialPlotForm" class="form-group">
+                        <div id="radialPlotTitle">
+                            <h4>Games Critic Score Based on Genre</h4>
+                        </div>
+                        <div id="selectedGenreDiv">
+                            <h5 id="selectedGenre">Action</h5>
+                        </div>         
+                        <div id="radialPlotDiv" class="col-sm">
+                            <div id="radial_plot"></div>                        
+                        </div>
+                    </div>
+                </div>
+
+                <div id="donutChartSection" class="col-sm">
+                    <div id="donutChartForm" class="form-group">                        
+                        <div id="donutChartTitle">
+                            <h4>Game Sales per Platform Based on Genre</h4>
+                        </div>
+                        <div id="selectedGenreDiv">
+                            <h5 id="selectedGenre">Action</h5>
+                        </div>        
+                        <div id="donutChartDiv" class="col-sm">
+                            <div id="donut_chart"></div>                        
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- <div style="background-color: yellowgreen;" class="row">
