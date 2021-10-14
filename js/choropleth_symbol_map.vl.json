@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": "container",
-  "background": "#916BBF",
+  "background": "#1B262C",
   "projection": {"type": "equalEarth"},
   "layer": [
     {
@@ -25,7 +25,8 @@
           "feature": "ne_110m_admin_0_countries"
         }
       },
-      "transform": [{
+      "transform": [
+        {
           "lookup": "properties.NAME",
           "from": {
             "data": {
@@ -35,49 +36,80 @@
             "fields": ["Revenues"]
           }
         },
-        {"calculate": "datum.Revenues", "as": "Active Cases"}
+        {"calculate": "datum.Revenues", "as": "revenues"},
+        {"calculate": "'$' + datum.Revenues", "as": "signRevenues"}
       ],
       "projection": {
         "type": "equalEarth"
       },
       "mark": {
         "type": "geoshape"
-        },
+      },
       "encoding": {
         "color": {
-          "field": "Active Cases",
+          "field": "revenues",
           "type": "quantitative",
-          "scale": {"domain": [2400000000, 45000000000]}
+          "scale": {"domain": [2400000000, 5000000000, 45000000000], "scheme": "reds"},
+          "legend": {
+            "title": "Revenues",
+            "labelColor": "white",
+            "titleColor": "white",
+            "orient": "left",            
+            "labelOffset": 10,
+            "titlePadding": 10
+
+          }
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-          {"field": "Revenues", "type": "quantitative"}
+          {"field": "signRevenues", "type": "nominal", "title": "Revenues"}
         ]
       }
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/MaryamPeer/Homework9/main/data/10TopCountriesByGameRevenues.csv"
+        "url": "https://raw.githubusercontent.com/MaryamPeer/VideoGames/main/data/CountriesByGameRevenues.csv"
       },
-      "mark": {"type": "circle"},
+      "mark": {"type": "circle"},      
+      "transform": [
+        {"calculate": "'$' + datum.Revenues", "as": "revenues"}
+      ],
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {
           "field": "Revenues",
           "type": "quantitative",
-          "scale": {"domain": [2400000000, 45000000000]}
+          "scale": {"domain": [2400000000, 20000000000, 45000000000]},
+          "legend": {
+            "orient": "right",           
+            "titleFont": "Trebuchet MS",
+            "titleColor": "white",
+            "labelColor": "white",
+            "labelOffset": 10,
+            "titlePadding": 10,
+            "symbolOffset": -10,
+            "symbolStrokeColor": "#0F4C81",
+            "symbolFillColor": "#0F4C81",
+            "formatType": "number"          
+          }
         },
         "color": {
           "field": "Country",
           "type": "nominal",
-          "legend": null
-        }       
+          "legend": null,
+          "scale":{
+            "range": ["#0F4C81"]
+          }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "revenues", "type": "nominal", "title": "Revenues"}
+        ]
       }
-    }
-
-  ]
-
-  
-
+    }   
+  ],
+  "config": {
+    "font": "Trebuchet MS"   
+  }
 }

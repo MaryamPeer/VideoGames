@@ -1,0 +1,117 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": "container",
+  "background": "#1B262C",
+  "description": "A simple donut chart with embedded data.",    
+  "data": {
+    "url":  "https://raw.githubusercontent.com/MaryamPeer/VideoGames/main/data/Twitch_game_data.csv"
+  },
+  "params": [
+    {
+      "name": "Month_selection",
+      "value": "January",
+      "bind": {
+      "input": "select",
+      "options": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+        ],
+      "labels":[
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+        ],
+      "name": "Month: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Month == Month_selection"},
+    {"filter": "datum.Rank <= 5"},
+    {"filter": "datum.Year == 2020"},
+    {"calculate": "datum.Hours_Streamed + ' hours'", "as": "hours"}
+  ],
+  "encoding": {
+    "theta": {"field": "Hours_Streamed", "type": "quantitative", "stack": true},
+    "radius": {"field": "Hours_Streamed", "scale": {"type": "sqrt", "zero": true, "rangeMin": {"expr": "height/20"}, "rangeMax": {"expr": "height/2.5"}}},
+    "color": {
+      "field": "Game", 
+      "type": "nominal",
+      "scale":{
+        "range": ["#0F4C81", "#52ad9c", "#ED6663", "#6A66A3", "#FFA372"]
+      },
+      "legend": {
+        "orient": "top-left",
+        "titleColor": "white",
+        "labelOffset": 10,
+        "labelColor": "white"
+      }
+    },
+    "tooltip": [
+      {"field": "Game", "type": "nominal"},
+      {"field": "hours", "type": "nominal", "title": "Number of Time Streamed"}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "arc", 
+        "innerRadius": {"expr": "width/20"},
+        "strokeWidth": 2,
+        "stroke": "#1B262C",
+        "x": {"expr": "width / 2"}
+      }
+    },
+    {
+      "mark":{
+        "type": "text",
+        "dx": 40,
+        "dy": 20
+      },
+      "transform": [
+         {
+          "joinaggregate": [
+            {
+              "op": "max",
+              "field": "Hours_Streamed",
+              "as": "max_hours"
+            }
+          ]
+        }
+      ],
+      "encoding": {
+        "text": {
+          "field": "hours",
+          "type": "nominal",
+          "condition":{
+            "test": "(datum.Month != 'January' && datum.Month != 'May' && datum.max_hours != datum.Hours_Streamed) || (datum.Month == 'January' && datum.Game != 'Fortnite' || (datum.Month == 'May' && datum.Game != 'Fortnite'))",
+            "value": [""]
+          }
+        }
+      }
+    }      
+  ],
+  "config": {
+    "font": "Trebuchet MS"
+  }
+}

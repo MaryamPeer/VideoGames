@@ -11,7 +11,7 @@ var pack = d3.pack()
 .padding(6);
 
 d3.csv("data/google-play-store-games.csv", function(d) {
-    d.rating = +d["total ratings"];
+    d.rating = +d["5 star ratings"];
     d.game = d["title"]
 
     return d;
@@ -20,7 +20,7 @@ d3.csv("data/google-play-store-games.csv", function(d) {
 
     var color = d3.scaleOrdinal()
     .domain(data.map(function(d){ return d.game;}))
-    .range(['#fbb4ae','#b3cde3','#ccebc5','#decbe4','#fed9a6','#ffe9a8','#b9bfe3','#fddaec','#cccccc']);
+    .range(['#ED6663','#FFA372','#FFA372','#FFA372','#FFA372']);
 
     var root = d3.hierarchy({children: data})
     .sum(function(d) { return d.rating; })
@@ -48,50 +48,69 @@ d3.csv("data/google-play-store-games.csv", function(d) {
                     .attr("r", d.rating);
             });
 
-        div.html("Game: " + d.data.game + "<br>" + "Ratings: " + d.data.rating  )
+        div.html("<label style = 'color: gray' >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Game: &nbsp</label><label>" + d.data.game + "</label>" + "<br>" + "<label style = 'color: gray' >Number of 5 Star Ratings:&nbsp </label><label>" + d.data.rating + "</label>")
             .style("left", (d3.event.pageX) + "px")	
-            .style("top", (d3.event.pageY) + "px");	
+            .style("top", (d3.event.pageY) + "px");
     })					
 
     .on("mouseout", function(d) {		
         div.transition()		
             .duration(500)		
             .style("opacity", 0);	
-    });   
-
-    // node.append("text")
-    //     .attr("dx", 0)
-    //     .text(function(d){return  d.data.game})
-
-
-    // node.append("text")
-    // .attr("width", function(d){return  2*d.r*Math.cos(Math.PI/4)})
-    // .attr("height", function(d){return  2*d.r*Math.cos(Math.PI/4)})
-    // .append("xhtml:body")
-    // .style("font", "14px 'Helvetica Neue'")
-    // .html("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, excepturi veniam veritatis quaerat itaque eius voluptate! Fugit, est dolorum tenetur!");
-
-    // svg.selectAll("mydots")
-    // .data(data)
-    // .enter()
-    // .append("circle")
-    // .attr("cx", 370)
-    // .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-    // .attr("r", 5)
-    // .style("fill", function(d){ return color(d.game)})
-
-    // svg.selectAll(".legend")
-    // .data(data)
-    // .enter()
-    // .append("text")
-    // .attr("x", 380)
-    // .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-    // .style("overflow", "visible")
-    // .style("fill", function(d){ return color(d.game)})
-    // .text(function(d){ return d.game})
-    // .attr("text-anchor", "start")
-    // .attr("font-size", 12 + "px")
-    // .style("alignment-baseline", "middle")
+    }); 
     
-});
+    node.append("text")
+    .attr("dy", ".2em")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i > 2){
+            return d.data.game;
+        }       
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/6;
+    })
+    .attr("fill", "white");
 
+
+    node.append("text")
+    .attr("dy", "-5px")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i == 0){
+            return d.data.game.substring(0, d.r / (d.r/18));
+        }       
+        else if(i == 1){
+            return d.data.game.substring(0, d.r / (d.r/14));
+        }
+        else if(i == 2){
+            return d.data.game.substring(0, d.r / (d.r/15));
+        }
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/6;
+    })
+    .attr("fill", "white");
+
+    node.append("text")
+    .attr("dy", "1.3em")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i == 0){
+            return d.data.game.substring(d.r / (d.r/18), (d.data.game).length);
+        }       
+        else if(i == 1){
+            return d.data.game.substring(d.r / (d.r/14), (d.data.game).length);
+        }
+        else if(i == 2){
+            return d.data.game.substring(d.r / (d.r/15), (d.data.game).length);
+        }
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/6;
+    })
+    .attr("fill", "white");    
+});

@@ -1,23 +1,32 @@
-var spec1 = "js/choropleth_symbol_map.vg.json";
+var spec1 = "js/choropleth_symbol_map.vl.json";
 vegaEmbed('#choropleth_symbol_map', spec1, {actions: false}).then(function(result) {
 }).catch(console.error);
 
-var spec2 = "js/bar_chart.vl.json";
-vegaEmbed('#bar_chart', spec2, {actions: false}).then(function(result) {
+var spec2 = "js/radial_plot.vg.json";
+vegaEmbed('#radial_plot', spec2, {actions: false}).then(function(result) {
 }).catch(console.error);
 
-var spec = "js/donut_chart/donut_chart_action.vg.json";
-vegaEmbed('#donut_chart', spec, {actions: false}).then(function(result) {
+var spec3 = "js/bar_chart/bar_chart_action.vl.json";
+vegaEmbed('#bar_chart', spec3, {actions: false}).then(function(result) {
+}).catch(console.error);
+
+var spec4 = "js/donut_chart/donut_chart_action.vg.json";
+vegaEmbed('#donut_chart', spec4, {actions: false}).then(function(result) {
 }).catch(console.error);
 
 function displayDonutChart(genre){
 
-    var spec = "js/donut_chart/donut_chart_" + genre + ".vg.json";
-    vegaEmbed('#donut_chart', spec, {actions: false}).then(function(result) {
+    var spec_bar = "js/bar_chart/bar_chart_" + genre + ".vl.json";
+    vegaEmbed('#bar_chart', spec_bar, {actions: false}).then(function(result) {
     }).catch(console.error);
 
+    var spec_donut = "js/donut_chart/donut_chart_" + genre + ".vg.json";
+    vegaEmbed('#donut_chart', spec_donut, {actions: false}).then(function(result) {
+    }).catch(console.error);    
+
     var header = genre.substring(0,1).toUpperCase() + genre.substring(1);
-    document.getElementById('selectedGenreDiv').innerHTML = "<h5>" + header + "</h5>";
+    document.getElementById('selectedGenreDiv1').innerHTML = "<h5>" + header + "</h5>";
+    document.getElementById('selectedGenreDiv2').innerHTML = "<h5>" + header + "</h5>";
 }
 
 

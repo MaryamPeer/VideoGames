@@ -1,0 +1,120 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": "container",
+  "background": "#1B262C",
+  "title": "Shooter",
+  "description": "A bar chart with highlighting on hover and selecting on click. (Inspired by Tableau's interaction style.)",
+   "data": {
+    "url": "https://raw.githubusercontent.com/MaryamPeer/VideoGames/main/data/Video_Critic_Score.csv"
+  },
+  "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"},
+    {
+      "name": "platform_selection",
+      "value": "3DS",
+      "bind": {
+      "input": "select",
+      "options": [        
+        "3DS",
+        "PC",
+        "PS4",
+        "XOne"
+        ],
+      "labels":[
+        "Nintendo 3DS",
+        "PC",
+        "PS4",
+        "XOne"       
+        ],
+      "name": "Plaform: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Genre == 'Shooter'"},   
+    {"filter": "datum.Platform == platform_selection"},
+    {"window": [
+      {
+        "op": "rank",
+        "as": "rank"
+      }
+    ]},
+    {"filter": "datum.rank <= 10"},
+    {"filter": "datum.Critic_Score > 0"},
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "Critic_Score",
+          "as": "max_score"
+        }
+      ]
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "stroke": "white",
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {"field": "Name", "type": "ordinal", "sort": "y", "title": "Game"},
+    "y": {"field": "Critic_Score", "type": "quantitative", "title": "Critic Score"},
+    "fillOpacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "color": {
+      "condition": {"test": "datum.Critic_Score == datum.max_score", "value": "#ED6663"},
+      "value": "#FFA372" 
+   },
+   "tooltip": [
+    {"field": "Name", "type": "nominal", "title": "Game"},
+    {"field": "Critic_Score", "type": "quantitative", "title": "Critic Score"}
+  ],
+  "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 2
+        }
+      ],
+      "value": 0
+    }
+  },
+  "config": {
+    "font": "Trebuchet MS",
+    "axis": {
+      "labelColor": "white",
+      "titleColor": "white",
+      "grid": false,
+      "titlePadding": 20,
+      "titleFontSize": {"expr": "width/40"},
+      "labelFontSize": {"expr": "width/50"}
+    },
+    "axisX": {
+      "ticks": false,
+      "labelPadding": 10
+    },
+    "scale": {
+      "bandPaddingInner": 0.2
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "title": {
+      "color": "white",
+      "fontSize": 20
+    }
+  }
+}

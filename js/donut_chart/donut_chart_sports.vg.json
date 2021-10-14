@@ -2,42 +2,48 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": "container",
+  "title": "Sports",
+  "background": "#1B262C",
   "description": "A simple donut chart with embedded data.",
   "transform": [
-    {"filter": "datum.Genre == 'Sports'"}
+    {"filter": "datum.Genre == 'Sports'"},
+    {"calculate": "'$' + datum.sales + ' Million'", "as": "globalSales"}
   ],
   "data": {
-    "url": "https://raw.githubusercontent.com/MaryamPeer/Homework-10/main/Game_Sales.csv"
+    "url": "https://raw.githubusercontent.com/MaryamPeer/VideoGames/main/data/Game_Sales.csv"
   },
   "encoding": {
     "theta": {"field": "sales", "type": "quantitative", "stack": true},
     "color": {
       "field": "Platform", 
       "type": "nominal",
-      "scale": {"range": ["#decbe4", "#fbb4ae", "#fed9a6"]},
+      "scale": {"range": ["#52ad9c", "#ED6663", "#FFA372"]},
       "legend": {
         "orient": "top-right",
         "labelFontSize": 12,
         "titleFontSize": 15
       }
-    }
+    },
+    "tooltip": [
+      {"field": "Platform", "type": "nominal"},
+      {"field": "globalSales", "type": "nominal", "title": "Global Sales"}
+    ]
   },
   "layer": [
     {
       "mark": {
         "type": "arc", 
-        "innerRadius": {"expr": "width/6"}, 
-        "outerRadius": {"expr": "width/4"}, 
-        "stroke": "white", 
+        "innerRadius": {"expr": "width/5"}, 
+        "outerRadius": {"expr": "width/3"}, 
+        "stroke": "#1B262C", 
         "strokeWidth": 2,
         "x": {"expr": "width / 2"}
-      }     
-      
+      }
     },    
     {
       "mark": {
         "type": "text",
-        "radius": {"expr": "width/3.5"},
+        "radius": {"expr": "width/2.7"},
         "fontSize": 12.5
         
       },
@@ -49,6 +55,19 @@
           "field": "globalSales", "type": "nominal"
         }
       }
+     
     }    
-  ]
+  ],
+  "config": {
+    "title": {
+      "color": "white",
+      "fontSize": 20
+    },
+    "legend": {
+      "titleColor": "white",
+      "labelColor": "white",
+      "titlePadding": 10
+    },
+    "font": "Trebuchet MS"
+  }
 }
