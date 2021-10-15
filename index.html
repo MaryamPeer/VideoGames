@@ -49,22 +49,31 @@
 
             <div id="mapChartSection" class="row">
                 <div id="mapChartTitle">
-                    <h4>10 Top Countries By Game Revenues</h4>
+                    <h4>10 Top Countries By Game Revenues In 2020</h4>
+                </div>
+                <div id="mapText">
+                    <p>The data provided on the countries leading in the game market are only estimates that are based
+                       on a combination of primary consumer research, transactional data, quaterly company reports, census data
+                       as well as the amount spent by consumers in each country. 
+                    </p>                  
                 </div>
                 <div>
-                    <p style="text-align: start;">jngj3rngj3rng</p>
+                    <p><b>&nbspChina&nbsp</b>is the number <b>&nbsp1&nbsp</b> country in terms of game revenues with a value of <b>&nbsp$44,3 Million&nbsp</b>.</p>
                 </div>
                 <div id="choropleth_symbol" class="col-sm">
                     <div id="choropleth_symbol_map"></div>                    
                 </div>
             </div>
             
-            <div id = "top5Charts" class="row">
+            <div id = "topCharts" class="row">
             
                 <div id="bubblePlotDiv" class="col-sm">                    
                     <div id="bubblePlotForm" class="form-group">
                         <div id="bubblePlotTitle">
-                            <h4>5 Top Games on Google Play Store</h4>
+                            <h4>10 Top Games on Google Play Store</h4>
+                        </div>
+                        <div id="bubblePlotText">
+                            <p>Out of the 10 most popular games on Google Play Store, most games are from the <b>&nbspAction&nbsp</b> genre, a total of <b>&nbsp40%</b></p>
                         </div>
                         <div id="bubblePlot">
                             <svg width ="300" height="300" font-family="sans-serif" font-size="10" text-anchor="middle" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid meet">
@@ -77,7 +86,10 @@
                     <div id="radialPlotForm" class="form-group">
                         <div id="radialPlotTitle">
                             <h4>5 Top Games on Twitch in 2020</h4>
-                        </div>                                
+                        </div>    
+                        <div id="radialPlotText">
+                            <p>The ranking of the games on Twitch are based on the amount of time spent by users <b>&nbspwatching&nbsp</b> the streams instead of streaming.</p>
+                        </div>                            
                         <div id="radialPlotDiv" class="col-sm">
                             <div id="radial_plot"></div>                        
                         </div>
@@ -87,7 +99,15 @@
             
             <div id="genreSelectionDiv" class="row">
                 <div class="col-sm">
-                    <h4 id="genreTitle">Game Genre: Global Sales in 2016</h4>
+                    <div class="form-group">
+                        <div >
+                            <h4 id="genreTitle">Game Genre: Global Sales In 2016</h4>
+                        </div>
+                        <div>
+                            <p>By clicking on the genres shown below, the chart for games' critic score and the chart for game sales per plaform will change to display
+                                data from the selected genre.</p><br>
+                        </div>
+                    </div>                 
                 </div>
             </div>
 
@@ -136,7 +156,7 @@
                 <div id="barChartSection" class="col-sm">
                     <div id="barChartForm" class="form-group">
                         <div id="barChartTitle">
-                            <h4>Games Critic Score Based on Genre</h4>
+                            <h4>Games' Critic Score</h4>
                         </div>       
                         <div id="bar" class="col-sm">
                             <div id="bar_chart"></div>                        
@@ -147,7 +167,7 @@
                 <div id="donutChartSection" class="col-sm">
                     <div id="donutChartForm" class="form-group">  
                         <div id="donutChartTitle">
-                            <h4>Game Sales per Platform Based on Genre</h4>
+                            <h4>Game Sales per Platform</h4>
                         </div>      
                         <div id="donutChartDiv" class="col-sm">
                             <div id="donut_chart"></div>                        

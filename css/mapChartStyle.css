@@ -16,16 +16,21 @@
     align-items: center;
 }
 
+#mapText{
+    height: 6%;
+    display: flex;
+}
+
 #choropleth_symbol{
     position: relative;
-    height: 90%;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #choropleth_symbol_map{
-    width: 100%;
+    width: 98%;
     position: relative;
     height: 100%;
     display: flex;

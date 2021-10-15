@@ -16,9 +16,13 @@
     color: #ED6663;
 }
 
+#radialPlotText{
+    height: 10%;
+}
+
 #radialPlotDiv{
     position: relative;
-    height: 90%;
+    height: 80%;
 }
 
 #radial_plot{
@@ -32,4 +36,8 @@
 
 .vega-bind{
     color: white;
+}
+
+select[name="Month_selection"]{
+    text-align: center;
 }

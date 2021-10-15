@@ -43,7 +43,8 @@
     {
       "mark": {
         "type": "text",
-        "radius": {"expr": "width/2.7"},
+        "radius": {"expr": "width/3"},
+        "radiusOffset": 20,
         "fontSize": 12.5
         
       },
@@ -53,6 +54,9 @@
       "encoding": {
         "text": {
           "field": "globalSales", "type": "nominal"
+        },
+        "size":{
+          "value": {"expr": "width/55"}
         }
       }
      

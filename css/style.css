@@ -24,7 +24,7 @@
     color: #ED6663;
 }
 
-#top5Charts{
+#topCharts{
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -81,6 +81,7 @@ p{
 b{
     font-size: x-large;
     text-align: center;
+    color: #ED6663;
 }
 
 input{
@@ -90,6 +91,10 @@ input{
 .form-group{
     text-align: center;
 }
+
+/* .vega-bind{
+    text-align: start
+} */
 
 /* .img{
     width: 10px;

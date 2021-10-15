@@ -12,7 +12,8 @@ var pack = d3.pack()
 
 d3.csv("data/google-play-store-games.csv", function(d) {
     d.rating = +d["5 star ratings"];
-    d.game = d["title"]
+    d.game = d["title"];
+    d.category = d["category"]
 
     return d;
     }, function(error, data) {
@@ -20,7 +21,7 @@ d3.csv("data/google-play-store-games.csv", function(d) {
 
     var color = d3.scaleOrdinal()
     .domain(data.map(function(d){ return d.game;}))
-    .range(['#ED6663','#FFA372','#FFA372','#FFA372','#FFA372']);
+    .range(['#ED6663','#FFA372','#FFA372','#FFA372','#FFA372', "#FFA372", "#FFA372", "#FFA372", "#FFA372", "#FFA372"]);
 
     var root = d3.hierarchy({children: data})
     .sum(function(d) { return d.rating; })
@@ -48,7 +49,10 @@ d3.csv("data/google-play-store-games.csv", function(d) {
                     .attr("r", d.rating);
             });
 
-        div.html("<label style = 'color: gray' >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Game: &nbsp</label><label>" + d.data.game + "</label>" + "<br>" + "<label style = 'color: gray' >Number of 5 Star Ratings:&nbsp </label><label>" + d.data.rating + "</label>")
+        div.html("<label style = 'color: gray' >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Game:&nbsp</label><label>"
+        + d.data.game + "</label>"
+        + "<br>" + "<label style = 'color: gray' >Number of 5 Star Ratings:&nbsp </label><label>" + d.data.rating + "</label>" + "<br>" 
+        + "<label style = 'color: gray' >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspGenre:&nbsp</label><label>" + d.data.category )
             .style("left", (d3.event.pageX) + "px")	
             .style("top", (d3.event.pageY) + "px");
     })					
@@ -63,7 +67,7 @@ d3.csv("data/google-play-store-games.csv", function(d) {
     .attr("dy", ".2em")
     .style("text-anchor", "middle")
     .text(function(d, i) {
-        if(i > 2){
+        if(i != 0 && i != 6){
             return d.data.game;
         }       
     })
@@ -81,10 +85,13 @@ d3.csv("data/google-play-store-games.csv", function(d) {
         if(i == 0){
             return d.data.game.substring(0, d.r / (d.r/18));
         }       
-        else if(i == 1){
-            return d.data.game.substring(0, d.r / (d.r/14));
-        }
-        else if(i == 2){
+        // else if(i == 1){
+        //     return d.data.game.substring(0, d.r / (d.r/14));
+        // }
+        // else if(i == 2){
+        //     return d.data.game.substring(0, d.r / (d.r/15));
+        // }
+        else if(i == 6){
             return d.data.game.substring(0, d.r / (d.r/15));
         }
     })
@@ -101,10 +108,13 @@ d3.csv("data/google-play-store-games.csv", function(d) {
         if(i == 0){
             return d.data.game.substring(d.r / (d.r/18), (d.data.game).length);
         }       
-        else if(i == 1){
-            return d.data.game.substring(d.r / (d.r/14), (d.data.game).length);
-        }
-        else if(i == 2){
+        // else if(i == 1){
+        //     return d.data.game.substring(d.r / (d.r/14), (d.data.game).length);
+        // }
+        // else if(i == 2){
+        //     return d.data.game.substring(d.r / (d.r/15), (d.data.game).length);
+        // }
+        else if(i == 6){
             return d.data.game.substring(d.r / (d.r/15), (d.data.game).length);
         }
     })

@@ -49,19 +49,19 @@
     {"filter": "datum.Month == Month_selection"},
     {"filter": "datum.Rank <= 5"},
     {"filter": "datum.Year == 2020"},
-    {"calculate": "datum.Hours_Streamed + ' hours'", "as": "hours"}
+    {"calculate": "datum.Hours_watched + ' hours'", "as": "hours"}
   ],
   "encoding": {
-    "theta": {"field": "Hours_Streamed", "type": "quantitative", "stack": true},
-    "radius": {"field": "Hours_Streamed", "scale": {"type": "sqrt", "zero": true, "rangeMin": {"expr": "height/20"}, "rangeMax": {"expr": "height/2.5"}}},
+    "theta": {"field": "Hours_watched", "type": "quantitative", "stack": true},
+    "radius": {"field": "Hours_watched", "scale": {"type": "sqrt", "zero": true, "rangeMin": {"expr": "height/20"}, "rangeMax": {"expr": "height/2.5"}}},
     "color": {
       "field": "Game", 
       "type": "nominal",
       "scale":{
-        "range": ["#0F4C81", "#52ad9c", "#ED6663", "#6A66A3", "#FFA372"]
+        "range": ["#74BDCB", "#52ad9c", "#ED6663", "#6A66A3", "#FFA372"]
       },
       "legend": {
-        "orient": "top-left",
+        "orient": "top-right",
         "titleColor": "white",
         "labelOffset": 10,
         "labelColor": "white"
@@ -69,7 +69,7 @@
     },
     "tooltip": [
       {"field": "Game", "type": "nominal"},
-      {"field": "hours", "type": "nominal", "title": "Number of Time Streamed"}
+      {"field": "Hours_watched", "type": "quantitative", "title": "Hours Spent Watching"}
     ]
   },
   "layer": [
@@ -85,8 +85,7 @@
     {
       "mark":{
         "type": "text",
-        "dx": 40,
-        "dy": 20
+        "radiusOffset": 50
       },
       "transform": [
          {
@@ -101,17 +100,18 @@
       ],
       "encoding": {
         "text": {
-          "field": "hours",
-          "type": "nominal",
-          "condition":{
-            "test": "(datum.Month != 'January' && datum.Month != 'May' && datum.max_hours != datum.Hours_Streamed) || (datum.Month == 'January' && datum.Game != 'Fortnite' || (datum.Month == 'May' && datum.Game != 'Fortnite'))",
-            "value": [""]
-          }
+          "field": "Hours_watched",
+          "type": "quantitative",
+          "format": ","
         }
       }
     }      
   ],
   "config": {
-    "font": "Trebuchet MS"
+    "font": "Trebuchet MS",
+    "text": {
+      "fontSize": {"expr": "width/55"}
+    }
   }
+  
 }
