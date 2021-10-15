@@ -17,8 +17,11 @@
 }
 
 #mapText{
+    height: 10%;
+}
+
+#mapText2{
     height: 6%;
-    display: flex;
 }
 
 #choropleth_symbol{
