@@ -108,7 +108,7 @@
     }      
   ],
   "config": {
-    "font": "Trebuchet MS",
+    "font": "Roboto",
     "text": {
       "fontSize": {"expr": "width/42"}
     }

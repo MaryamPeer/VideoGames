@@ -93,7 +93,7 @@
     }
   },
   "config": {
-    "font": "Trebuchet MS",
+    "font": "Roboto",
     "axis": {
       "labelColor": "white",
       "titleColor": "white",
