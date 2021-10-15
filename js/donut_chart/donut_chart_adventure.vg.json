@@ -33,8 +33,8 @@
     {
       "mark": {
         "type": "arc", 
-        "innerRadius": {"expr": "width/5"}, 
-        "outerRadius": {"expr": "width/3"}, 
+        "innerRadius": {"expr": "height/4"}, 
+        "outerRadius": {"expr": "height/2.4"}, 
         "stroke": "#1B262C", 
         "strokeWidth": 2,
         "x": {"expr": "width / 2"}
@@ -43,7 +43,7 @@
     {
       "mark": {
         "type": "text",
-        "radius": {"expr": "width/3"},
+        "radius": {"expr": "height/2.4"},
         "radiusOffset": 20,
         "fontSize": 12.5
         
