@@ -21,7 +21,7 @@ d3.csv("data/google-play-store-games.csv", function(d) {
 
     var color = d3.scaleOrdinal()
     .domain(data.map(function(d){ return d.game;}))
-    .range(['#ED6663','#FFA372','#FFA372','#FFA372','#FFA372', "#FFA372", "#FFA372", "#FFA372", "#FFA372", "#FFA372"]);
+    .range(['#6A66A3','#FFA372','#FFA372','#FFA372','#FFA372', "#FFA372", "#FFA372", "#FFA372", "#FFA372", "#FFA372"]);
 
     var root = d3.hierarchy({children: data})
     .sum(function(d) { return d.rating; })
@@ -67,13 +67,41 @@ d3.csv("data/google-play-store-games.csv", function(d) {
     .attr("dy", ".2em")
     .style("text-anchor", "middle")
     .text(function(d, i) {
-        if(i != 0 && i != 6){
+        if(i == 3 || i == 4){
             return d.data.game;
         }       
     })
     .attr("font-family", "sans-serif")
     .attr("font-size", function(d){
-        return d.r/6;
+        return d.r/4;
+    })
+    .attr("fill", "white");
+
+    node.append("text")
+    .attr("dy", ".2em")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i == 9){
+            return d.data.game;
+        }       
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/3;
+    })
+    .attr("fill", "white");
+
+    node.append("text")
+    .attr("dy", ".2em")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i == 1){
+            return d.data.game;
+        }       
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/4;
     })
     .attr("fill", "white");
 
@@ -83,21 +111,12 @@ d3.csv("data/google-play-store-games.csv", function(d) {
     .style("text-anchor", "middle")
     .text(function(d, i) {
         if(i == 0){
-            return d.data.game.substring(0, d.r / (d.r/18));
+            return d.data.game.substring(0, d.r / (d.r/16));
         }       
-        // else if(i == 1){
-        //     return d.data.game.substring(0, d.r / (d.r/14));
-        // }
-        // else if(i == 2){
-        //     return d.data.game.substring(0, d.r / (d.r/15));
-        // }
-        else if(i == 6){
-            return d.data.game.substring(0, d.r / (d.r/15));
-        }
     })
     .attr("font-family", "sans-serif")
     .attr("font-size", function(d){
-        return d.r/6;
+        return d.r/5;
     })
     .attr("fill", "white");
 
@@ -106,21 +125,83 @@ d3.csv("data/google-play-store-games.csv", function(d) {
     .style("text-anchor", "middle")
     .text(function(d, i) {
         if(i == 0){
-            return d.data.game.substring(d.r / (d.r/18), (d.data.game).length);
-        }       
-        // else if(i == 1){
-        //     return d.data.game.substring(d.r / (d.r/14), (d.data.game).length);
-        // }
-        // else if(i == 2){
-        //     return d.data.game.substring(d.r / (d.r/15), (d.data.game).length);
-        // }
-        else if(i == 6){
-            return d.data.game.substring(d.r / (d.r/15), (d.data.game).length);
-        }
+            return d.data.game.substring(d.r / (d.r/16), (d.data.game).length);
+        }    
     })
     .attr("font-family", "sans-serif")
     .attr("font-size", function(d){
-        return d.r/6;
+        return d.r/5
     })
-    .attr("fill", "white");    
+    .attr("fill", "white");
+
+    node.append("text")
+    .attr("dy", "-5px")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i == 2){
+            return d.data.game.substring(0, d.r / (d.r/14));
+        }    
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/4;
+    })
+    .attr("fill", "white");
+
+    node.append("text")
+    .attr("dy", "1.3em")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+       if(i == 2){
+            return d.data.game.substring(d.r / (d.r/14), (d.data.game).length);
+        }      
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/4
+    })
+    .attr("fill", "white");
+    
+   
+    node.append("text")
+    .attr("dy", "-5px")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i == 6){
+            return d.data.game.substring(0, d.r / (d.r/16));
+        }    
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/4;
+    })
+    .attr("fill", "white");
+
+    node.append("text")
+    .attr("dy", "1.3em")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i == 6){
+            return d.data.game.substring(d.r / (d.r/16), (d.data.game).length);
+        }    
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/4;
+    })
+    .attr("fill", "white");
+
+    node.append("text")
+    .attr("dy", ".2em")
+    .style("text-anchor", "middle")
+    .text(function(d, i) {
+        if(i == 5 || i == 7 || i == 8){
+            return d.data.game.substring(0, d.r / (d.r/16));
+        }       
+    })
+    .attr("font-family", "sans-serif")
+    .attr("font-size", function(d){
+        return d.r/3.2;
+    })
+    .attr("fill", "white");
 });

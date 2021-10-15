@@ -17,7 +17,7 @@
     "color": {
       "field": "Platform", 
       "type": "nominal",
-      "scale": {"range": ["#52ad9c", "#ED6663", "#FFA372"]},
+      "scale": {"range": ["#52ad9c", "#ED6663", "#FFC15E"]},
       "legend": {
         "orient": "top-right",
         "labelFontSize": 12,
@@ -56,7 +56,7 @@
           "field": "globalSales", "type": "nominal"
         },
         "size":{
-          "value": {"expr": "width/55"}
+          "value": {"expr": "width/42"}
         }
       }
      

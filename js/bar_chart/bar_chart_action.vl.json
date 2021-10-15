@@ -67,7 +67,7 @@
       "value": 0.3
     },
     "color": {
-      "condition": {"test": "datum.Critic_Score == datum.max_score", "value": "#ED6663"},
+      "condition": {"test": "datum.Critic_Score == datum.max_score", "value": "#6A66A3"},
       "value": "#FFA372" 
    },
    "tooltip": [
@@ -102,7 +102,8 @@
     },
     "axisX": {
       "ticks": false,
-      "labelPadding": 10
+      "labelPadding": 10,
+      "labelFontSize": 12
     },
     "scale": {
       "bandPaddingInner": 0.2

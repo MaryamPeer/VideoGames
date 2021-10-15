@@ -76,6 +76,7 @@ input:hover{
 p{
     color: white;
     text-align: center;
+    font-size: 15px;
 }
 
 b{
@@ -91,47 +92,3 @@ input{
 .form-group{
     text-align: center;
 }
-
-/* .vega-bind{
-    text-align: start
-} */
-
-/* .img{
-    width: 10px;
-    height: 10px;
-} */
-/* #parent{
-    position: relative;
-}
-
-#form{
-    width: 100%;
-    position: absolute;
-    height: 100%;
-}
-
-#selection{
-    height: 20%;
-    background-color: blue;
-}
-
-#charts{
-    width: 100%;
-    height: 80%;
-    position: relative;
-    display: flex;
-}
-
-#radialChart{
-    height: 100%;
-    width: 50%;
-    float: left;
-    background-color: firebrick;
-}
-
-#donutChart{
-    height: 100%;
-    width: 50%;
-    float: right;
-}
- */

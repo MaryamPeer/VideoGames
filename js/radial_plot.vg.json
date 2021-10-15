@@ -53,12 +53,12 @@
   ],
   "encoding": {
     "theta": {"field": "Hours_watched", "type": "quantitative", "stack": true},
-    "radius": {"field": "Hours_watched", "scale": {"type": "sqrt", "zero": true, "rangeMin": {"expr": "height/20"}, "rangeMax": {"expr": "height/2.5"}}},
+    "radius": {"field": "Hours_watched", "scale": {"type": "sqrt", "zero": true, "rangeMax": {"expr": "width/3.7"}}},
     "color": {
       "field": "Game", 
       "type": "nominal",
       "scale":{
-        "range": ["#74BDCB", "#52ad9c", "#ED6663", "#6A66A3", "#FFA372"]
+        "range": ["#74BDCB", "#52ad9c", "#ED6663", "#0FA3B1", "#FFC15E"]
       },
       "legend": {
         "orient": "top-right",
@@ -69,7 +69,7 @@
     },
     "tooltip": [
       {"field": "Game", "type": "nominal"},
-      {"field": "Hours_watched", "type": "quantitative", "title": "Hours Spent Watching"}
+      {"field": "Hours_watched", "type": "quantitative", "format": ",", "title": "Hours Spent Watching"}
     ]
   },
   "layer": [
@@ -85,7 +85,7 @@
     {
       "mark":{
         "type": "text",
-        "radiusOffset": 50
+        "radiusOffset": 40
       },
       "transform": [
          {
@@ -110,7 +110,7 @@
   "config": {
     "font": "Trebuchet MS",
     "text": {
-      "fontSize": {"expr": "width/55"}
+      "fontSize": {"expr": "width/42"}
     }
   }
   
