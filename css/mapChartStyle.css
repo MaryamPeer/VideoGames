@@ -17,7 +17,7 @@
 }
 
 #mapText{
-    height: 10%;
+    height: 6%;
 }
 
 #mapText2{
@@ -26,7 +26,7 @@
 
 #choropleth_symbol{
     position: relative;
-    height: 70%;
+    height: 68%;
     display: flex;
     justify-content: center;
     align-items: center;
