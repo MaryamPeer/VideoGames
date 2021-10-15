@@ -67,7 +67,7 @@
       "value": 0.3
     },
     "color": {
-      "condition": {"test": "datum.Critic_Score == datum.max_score", "value": "#6A66A3"},
+      "condition": {"test": "datum.Critic_Score == datum.max_score", "value": "#ED6663"},
       "value": "#FFA372" 
    },
    "tooltip": [

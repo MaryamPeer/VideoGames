@@ -21,7 +21,7 @@ d3.csv("data/google-play-store-games.csv", function(d) {
 
     var color = d3.scaleOrdinal()
     .domain(data.map(function(d){ return d.game;}))
-    .range(['#6A66A3','#FFA372','#FFA372','#FFA372','#FFA372', "#FFA372", "#FFA372", "#FFA372", "#FFA372", "#FFA372"]);
+    .range(['#ED6663','#FFA372','#FFA372','#FFA372','#FFA372', "#FFA372", "#FFA372", "#FFA372", "#FFA372", "#FFA372"]);
 
     var root = d3.hierarchy({children: data})
     .sum(function(d) { return d.rating; })

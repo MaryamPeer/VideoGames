@@ -58,7 +58,7 @@
       "field": "Game", 
       "type": "nominal",
       "scale":{
-        "range": ["#74BDCB", "#52ad9c", "#ED6663", "#0FA3B1", "#FFC15E"]
+        "range": ["#74BDCB", "#52ad9c", "#f07c7a", "#6A66A3", "#FFC15E"]
       },
       "legend": {
         "orient": "top-right",
