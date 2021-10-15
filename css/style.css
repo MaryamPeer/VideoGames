@@ -74,9 +74,7 @@ input:hover{
 }
 
 p{
-    color: white;
     text-align: center;
-    font-size: 10px;
 }
 
 b{
@@ -91,4 +89,8 @@ input{
 
 .form-group{
     text-align: center;
+}
+
+h6{
+    color: white;
 }
