@@ -49,10 +49,10 @@ d3.csv("data/google-play-store-games.csv", function(d) {
                     .attr("r", d.rating);
             });
 
-        div.html("<label style = 'color: gray' >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Game:&nbsp</label><label>"
+        div.html("<label style = 'color: gray' >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Game:&nbsp</label><label>"
         + d.data.game + "</label>"
         + "<br>" + "<label style = 'color: gray' >Number of 5 Star Ratings:&nbsp </label><label>" + d.data.rating + "</label>" + "<br>" 
-        + "<label style = 'color: gray' >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Genre:&nbsp</label><label>" + d.data.category )
+        + "<label style = 'color: gray' >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspGenre:&nbsp</label><label>" + d.data.category )
             .style("left", (d3.event.pageX) + "px")	
             .style("top", (d3.event.pageY) + "px");
     })					
