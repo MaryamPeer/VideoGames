@@ -86,7 +86,9 @@
             "symbolOffset": -10,
             "symbolStrokeColor": "#0F4C81",
             "symbolFillColor": "#0F4C81",
-            "formatType": "number"          
+            "formatType": "number",
+            "labelFontSize": 10,
+            "titleFontSize": 10
           }
         },
         "color": {
