@@ -64,7 +64,9 @@
         "orient": "top-right",
         "titleColor": "white",
         "labelOffset": 10,
-        "labelColor": "white"
+        "labelColor": "white",
+        "titleFontSize": 8,
+        "labelFontSize": 8
       }
     },
     "tooltip": [
@@ -85,7 +87,7 @@
     {
       "mark":{
         "type": "text",
-        "radiusOffset": 40
+        "radiusOffset": 38
       },
       "transform": [
          {
@@ -108,7 +110,7 @@
     }      
   ],
   "config": {
-    "font": "Roboto",
+    "font": "Trebuchet MS",
     "text": {
       "fontSize": {"expr": "width/42"}
     }

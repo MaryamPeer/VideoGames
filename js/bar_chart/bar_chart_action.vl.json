@@ -91,7 +91,7 @@
     }
   },
   "config": {
-    "font": "Roboto",
+    "font": "Trebuchet MS",
     "axis": {
       "labelColor": "white",
       "titleColor": "white",
@@ -102,8 +102,7 @@
     },
     "axisX": {
       "ticks": false,
-      "labelPadding": 10,
-      "labelFontSize": 12
+      "labelPadding": 10
     },
     "scale": {
       "bandPaddingInner": 0.2

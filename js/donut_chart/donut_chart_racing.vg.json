@@ -20,8 +20,8 @@
       "scale": {"range": ["#52ad9c", "#f07c7a", "#FFC15E"]},
       "legend": {
         "orient": "top-right",
-        "labelFontSize": 12,
-        "titleFontSize": 15
+        "labelFontSize": 10,
+        "titleFontSize": 10
       }
     },
     "tooltip": [
@@ -72,6 +72,6 @@
       "labelColor": "white",
       "titlePadding": 10
     },
-    "font": "Roboto"
+    "font": "Trebuchet MS"
   }
 }

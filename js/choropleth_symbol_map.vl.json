@@ -53,8 +53,9 @@
             "titleColor": "white",
             "orient": "left",            
             "labelOffset": 10,
-            "titlePadding": 10
-
+            "titlePadding": 10,
+            "labelFontSize": 10,
+            "titleFontSize": 10
           }
         },
         "tooltip": [
@@ -104,6 +105,6 @@
     }   
   ],
   "config": {
-    "font": "Roboto"   
+    "font": "Trebuchet MS"   
   }
 }
