@@ -98,6 +98,10 @@ select[name="Month_selection"]{
     text-align: center;
 }
 
+select[name="platform_selection"]{
+    text-align: center;
+}
+
 svg {
     position: relative;
     height: 100%;
